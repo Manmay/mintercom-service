@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://polygon.co.za/model"
+	xmlns:tns="http://polygon.co.za/model" elementFormDefault="qualified">
+
+	<element name="UserQueryModel">
+		<complexType>
+			<sequence>
+				<element name="id" type="long"></element>
+				<element name="userName" type="string"></element>
+				<element name="role" type="string"></element>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="UserCommandModel">
+		<complexType>
+			<sequence>
+				<element name="userName" type="string"></element>
+				<element name="password" type="string"></element>
+				<element name="role" type="string"></element>
+			</sequence>
+		</complexType>
+	</element>
+	
+	<element name="ComplexQueryModel" type="tns:ComplexQueryModel" />
+
+	<complexType name="ComplexQueryModel">
+		<sequence>
+			<element name="id" type="long"></element>
+			<element name="security_company" type="string"></element>
+			<element name="name" type="string"></element>
+			<element name="no_of_gates" type="string"></element>
+		</sequence>
+	</complexType>
+	
+	<element name="TenantQueryModel" type="tns:TenantQueryModel" />
+
+	<complexType name="TenantQueryModel">
+		<sequence>
+			<element name="id" type="long"></element>
+			<element name="complex_id" type="integer"></element>
+			<element name="firstname" type="string"></element>
+			<element name="lastname" type="string"></element>
+			<element name="uuid" type="string"></element>
+			<element name="unit_no" type="integer"></element>
+		</sequence>
+	</complexType>
+
+</schema>
